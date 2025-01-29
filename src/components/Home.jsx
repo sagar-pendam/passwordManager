@@ -18,7 +18,7 @@ function Home() {
 
 
     useEffect(() => {
-        console.log(passwordArray);
+        // console.log(passwordArray);
         
     }, [passwordArray])
 
@@ -47,8 +47,8 @@ function Home() {
             if (data) {
                 let arr = [JSON.parse(data)]
                 arr.push(form)
-                console.log("Local Storage:");
-                console.log(arr);
+                // console.log("Local Storage:");
+                // console.log(arr);
 
                 localStorage.setItem("passwords", JSON.stringify(arr))
 
@@ -56,15 +56,15 @@ function Home() {
             else {
                 
                 localStorage.setItem("passwords", JSON.stringify(form))
-                console.log("else");
+                // console.log("else");
 
-                console.log(localStorage.getItem("passwords"));
+                // console.log(localStorage.getItem("passwords"));
 
             }
-            console.log(form);
+            // console.log(form);
 
             setform({ website: "", username: "", password: "", id: "" })
-            console.log(passwordArray)
+            // console.log(passwordArray)
         }
         else {
             // alert("Error :Please Enter values greater than 3")
@@ -113,7 +113,7 @@ function Home() {
     }
 
     const editRecord = (items) => {
-        console.log(items);
+        // console.log(items);
 
 
         setpasswordArray([...passwordArray.filter((item) => { item.id !== items.id })])
@@ -194,7 +194,7 @@ function Home() {
                 {/* <form className="min-w-full mx-auto flex items-center justify-center flex-col px-4"> */}
                 <div className="relative z-0 w-full mb-5 group">
                     <input type="text" value={form.website} ref={websiteRef} onChange={(e) => handleChange(e)} name="website" id="floating_email" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                    <label htmlFor="floating_email" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
+                    <label htmlFor="floating_email" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Website</label>
                 </div>
                 <div className="relative z-0 w-full mb-5 group">
                     <input type="username" value={form.username} onChange={(e) => handleChange(e)} ref={usernameRef} name="username" id="floating_password" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
