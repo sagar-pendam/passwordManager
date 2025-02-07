@@ -167,7 +167,7 @@ function Home() {
     }
 
     const handleDeleteAll = ()=>{
-        alert("handleDeleteAll")
+        // alert("handleDeleteAll")
         localStorage.removeItem("passwords")
         let arr = []
         setpasswordArray([])
